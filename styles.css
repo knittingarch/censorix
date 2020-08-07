@@ -20,9 +20,7 @@ body {
 }
 
 .svg path:hover {
-  filter: 
-    saturate(2)
-    brightness(2);
+  fill: white;
 }
 
 .absolute {
