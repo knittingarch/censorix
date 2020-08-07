@@ -1,0 +1,55 @@
+body {
+  position: relative;
+  display: grid;
+  padding: 0;
+  margin: 0;
+  background: #1a1a1d;
+}
+
+.svg-wrapper {
+  width: 100vw;
+  height: 100vh;
+  margin-bottom: 100vh;
+}
+
+.svg {
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.svg path:hover {
+  filter: 
+    invert(0.5)
+    sepia(1)
+    hue-rotate(200deg)
+    saturate(4)
+    brightness(1);
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+footer {
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  height: 50vh;
+  width: 100%;
+  color:#fff; 
+  background: #1a1a1d;
+  font-size:1.5em;
+  text-align: center;
+  line-height:100px;
+}
