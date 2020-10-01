@@ -1,10 +1,24 @@
-# Censorix
+# README
 
-Judgments on life.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Hosting
-This blog will live on https://ghost.org/.
+Things you may want to cover:
 
-Design
-A custom theme will be created using Handlebars that integrates nicely with Ghost.
+* Ruby version
 
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
