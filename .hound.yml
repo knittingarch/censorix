@@ -1,0 +1,6 @@
+standard:
+  0.7
+
+erblint:
+  enabled: true
+

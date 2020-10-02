@@ -5,9 +5,9 @@ ruby "2.7.1"
 
 gem "bootsnap", require: false
 gem "jbuilder"
-gem "rails", "~> 6.0.3"
 gem "pg"
 gem "puma"
+gem "rails", "~> 6.0.3"
 gem "sass-rails"
 gem "turbolinks"
 gem "webpacker"
@@ -21,10 +21,10 @@ group :development, :test do
 end
 
 group :development do
-  gem "web-console"
   gem "listen"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem "web-console"
 end
 
 group :test do
