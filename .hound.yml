@@ -1,7 +1,0 @@
-standard:
-  enabled: true
-  config_file: .standard.yml
-
-erblint:
-  enabled: true
-
