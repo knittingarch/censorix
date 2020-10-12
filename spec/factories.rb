@@ -19,6 +19,4 @@ FactoryBot.define do
     published_at { 1.month.from_now }
     title
   end
-
-
 end
