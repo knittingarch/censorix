@@ -14,6 +14,9 @@ FactoryBot.define do
     name
   end
 
+
+
+
   factory :post do
     image_url { "www.someimage.com" }
     published_at { 1.month.from_now }
