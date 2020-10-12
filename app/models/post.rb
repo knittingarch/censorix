@@ -3,4 +3,5 @@ class Post < ApplicationRecord
 
   has_one :article
   has_many :categories
+  has_many :tags
 end

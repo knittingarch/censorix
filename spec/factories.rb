@@ -19,4 +19,10 @@ FactoryBot.define do
     published_at { 1.month.from_now }
     title
   end
+
+  factory :tag do
+    association(:post)
+
+    name { "some tag" }
+  end
 end
