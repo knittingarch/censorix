@@ -5,7 +5,6 @@ class CreatePostsTagsJoinTable < ActiveRecord::Migration[6.0]
       t.bigint :tag_id
     end
 
-    add_index :posts_tags, :post_id
-    add_index :posts_tags, :tag_id
+    add_index :posts_tags, [:post_id, :tag_id], unique: true
   end
 end
