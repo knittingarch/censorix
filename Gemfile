@@ -19,6 +19,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "rspec-rails"
   gem "standard"
+  gem "webdrivers"
 end
 
 group :development do
@@ -29,9 +30,9 @@ group :development do
 end
 
 group :test do
+  gem "capybara"
   gem "launchy"
   gem "shoulda-matchers"
-  gem "webdrivers"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
