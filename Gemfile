@@ -20,6 +20,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "selenium-webdriver"
   gem "standard"
+  gem "webdrivers"
 end
 
 group :development do
