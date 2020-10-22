@@ -2,12 +2,11 @@
 
 <p><%= t(".page_description", name: category.name) %></p>
 
-<p><%= link_to t(".navigation.helpers.back"), category_index_path %>
+<p><%= link_to t(".navigation.helpers.back"), categories_path %>
 
 <% posts.each do |post| %>
   <h2><%= post.title %></h2>
   <p><%= post.published_at %></p>
   <p><%= post.tags.map(&:name).join(", ") %></p>
   <p><%= post.article.content %></p>
-
 <% end %>
