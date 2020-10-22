@@ -133,4 +133,4 @@ jobs:
           PGUSER: censorix
           PGPASSWORD: censorix_test
         run: |
-          bundle exec rspec
+          HEADLESS=0 bundle exec rspec
