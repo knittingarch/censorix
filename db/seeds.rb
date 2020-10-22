@@ -40,7 +40,7 @@ tag4 = Tag.create!(name: "politics")
 tag5 = Tag.create!(name: "life")
 
 # create 5 posts with article, categories, and tags
-Post.create!(title: "Post #1", article: article1, categories: [category1], tags: [tag1, tag2])
+Post.create!(title: "Post #1", article: article1, categories: [category1], tags: [tag1, tag2], featured: true)
 
 Post.create!(title: "Post #2", article: article2, categories: [category1], tags: [tag1, tag2])
 

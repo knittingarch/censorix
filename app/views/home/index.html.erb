@@ -1,3 +1,5 @@
 <h1><%= t(".title") %></h1>
 
+<%= render "posts/featured_post", post: post %>
+
 <%= link_to t("categories.index.heading"), categories_path %>
