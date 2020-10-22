@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.describe "Visitor views blog list", type: :system do
+  before do
+    driven_by(:selenium_chrome_headless)
+  end
+
   context "by going to the category list page" do
     it "shows list of categories" do
       category = create(:category)
