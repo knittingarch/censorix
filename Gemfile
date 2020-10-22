@@ -18,8 +18,8 @@ group :development, :test do
   gem "bundler-audit", ">= 0.7.0", require: false
   gem "factory_bot_rails"
   gem "rspec-rails"
+  gem "selenium-webdriver"
   gem "standard"
-  gem "webdrivers"
 end
 
 group :development do
