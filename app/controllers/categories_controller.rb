@@ -8,10 +8,9 @@ class CategoriesController < ApplicationController
   def show
     if params[:id].present?
       category = Category.find(params[:id])
-      posts = category.posts
-    else
-      posts = nil
     end
+
+    posts = category.posts
 
     render locals: {
       category: category,
