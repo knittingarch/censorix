@@ -2,4 +2,10 @@
 
 <%= render "posts/featured_post", post: post %>
 
+<ul>
+<% categories.each do |category| %>
+  <li><%= link_to category.name, category_path(category.id) %></li>
+<% end %>
+</ul>
+
 <%= link_to t("categories.index.heading"), categories_path %>
