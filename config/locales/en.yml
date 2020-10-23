@@ -30,4 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  category:
+    index:
+      heading: Blog List by Category
+      page_description: Find posts by category
+    show:
+      page_description: "This is a list of posts for %{name}"
+  home:
+    index:
+      title: Censorix
+  navigation:
+    helpers:
+      back: Back

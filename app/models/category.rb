@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
   validates :name, presence: true
 
-  belongs_to :post, required: false
+  has_and_belongs_to_many :posts
 end

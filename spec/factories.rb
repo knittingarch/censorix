@@ -6,21 +6,41 @@ FactoryBot.define do
   end
 
   factory :category do
-    association(:post)
-
     sequence(:name) { |n| "Category #{n}" }
+
+    trait :post_with_categories do
+      transient do
+        categories_count { 1 }
+      end
+
+      after(:create) do |post, evaluator|
+        create_list(:category, evaluator.categories_count, posts: [post])
+        post.reload
+      end
+    end
   end
 
   factory :post do
     image_url { "www.someimage.com" }
     published_at { 1.month.from_now }
     sequence(:title) { |n| "Blog Content ##{n}" }
+
+    factory :post_with_categories do
+      transient do
+        categories_count { 1 }
+      end
+
+      after(:create) do |post, evaluator|
+        create_list(:category, evaluator.categories_count, posts: [post])
+        post.reload
+      end
+    end
   end
 
   factory :tag do
     sequence(:name) { |n| "tag#{n}" }
 
-    factory :post_with_tags do
+    trait :post_with_tags do
       transient do
         tags_count { 3 }
       end
