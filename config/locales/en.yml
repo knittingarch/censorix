@@ -30,7 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  category:
+  categories:
     index:
       heading: Blog List by Category
       page_description: Find posts by category

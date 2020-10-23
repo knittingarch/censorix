@@ -1,14 +1,18 @@
 require "rails_helper"
 
 RSpec.describe "Visitor views blog list", type: :system do
+  before do
+    driven_by(:selenium_chrome_headless)
+  end
+
   context "by going to the category list page" do
     it "shows list of categories" do
       category = create(:category)
 
       visit root_path
-      click_on I18n.t("category.index.heading")
+      click_on I18n.t("categories.index.heading")
 
-      expect(page).to have_content I18n.t("category.index.page_description")
+      expect(page).to have_content I18n.t("categories.index.page_description")
       expect(page).to have_content category.name
     end
   end
@@ -32,11 +36,11 @@ RSpec.describe "Visitor views blog list", type: :system do
         article: article2,
         tags: [tag2, tag3])
 
-      visit category_index_path
+      visit categories_path
       click_on category.name
 
       expect(page).to have_content I18n.t(
-        "category.show.page_description",
+        "categories.show.page_description",
         name: category.name
       )
       expect(page).to have_content post1.article.content
