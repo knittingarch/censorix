@@ -1,7 +1,0 @@
-<h1><%= category.name %></h1>
-
-<p><%= t(".page_description", name: category.name) %></p>
-
-<p><%= link_to t(".navigation.helpers.back"), categories_path %>
-
-<%= render posts %>
