@@ -57,5 +57,4 @@ ActiveRecord::Schema.define(version: 2020_10_22_113405) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_tags_on_post_id"
   end
-
 end

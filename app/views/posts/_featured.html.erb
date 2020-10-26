@@ -1,6 +1,7 @@
 <div>
   <h2><%= post.title %></h2>
+  <p><%= t(".label") %></p>
   <p><%= post.published_at %></p>
-  <p><%= post.tags.map(&:name).join(", ") %></p>
   <p><%= post.article.content %></p>
+  <%= link_to t(".cta"), post_path(post) %>
 </div>
