@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     categories = Category.all
-    post = Post.order("updated_at").where(featured: true).last
+    post = Post.most_recent_featured_post
 
     render locals: {
       post: post,

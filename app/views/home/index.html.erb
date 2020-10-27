@@ -1,6 +1,8 @@
 <h1><%= t(".title") %></h1>
 
-<%= render "posts/featured_post", post: post %>
+<% if post && post.featured? %>
+  <%= render "posts/featured", post: post %>
+<% end %>
 
 <ul>
 <% categories.each do |category| %>

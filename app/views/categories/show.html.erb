@@ -5,5 +5,5 @@
 <p><%= link_to t(".navigation.helpers.back"), categories_path %>
 
 <% posts.each do |post| %>
-  <%= render "posts/blog_post", post: post %>
+  <%= render "posts/post", post: post %>
 <% end %>

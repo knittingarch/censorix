@@ -42,3 +42,9 @@ en:
   navigation:
     helpers:
       back: Back
+  posts:
+    featured:
+      cta: "See full post >>"
+      label: "** Featured **"
+    show:
+      back_to_category: "Back to %{category_name}"
