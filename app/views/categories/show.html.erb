@@ -2,7 +2,7 @@
 
 <p><%= t(".page_description", name: category.name) %></p>
 
-<p><%= link_to t(".navigation.helpers.back"), categories_path %>
+<p><%= link_to t(".navigation.helpers.back"), root_path %></p>
 
 <% posts.each do |post| %>
   <%= render "posts/truncated", post: post %>
