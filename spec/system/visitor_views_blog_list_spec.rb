@@ -18,19 +18,14 @@ RSpec.describe "Visitor views blog list", type: :system do
       category = create(:category)
       article1 = create(:article)
       article2 = create(:article)
-      tag1 = create(:tag)
-      tag2 = create(:tag)
-      tag3 = create(:tag)
 
       post1 = create(:post,
         categories: [category],
-        article: article1,
-        tags: [tag1])
+        article: article1)
 
       post2 = create(:post,
         categories: [category],
-        article: article2,
-        tags: [tag2, tag3])
+        article: article2)
 
       visit categories_path
       click_on category.name
@@ -40,10 +35,7 @@ RSpec.describe "Visitor views blog list", type: :system do
         name: category.name
       )
       expect(page).to have_content post1.article.content
-      expect(page).to have_content post1.tags.first.name
       expect(page).to have_content post2.article.content
-      expect(page).to have_content post2.tags.first.name
-      expect(page).to have_content post2.tags.last.name
     end
   end
 end

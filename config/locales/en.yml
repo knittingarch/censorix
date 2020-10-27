@@ -48,3 +48,5 @@ en:
       label: "** Featured **"
     show:
       back_to_category: "Back to %{category_name}"
+    truncated:
+      keep_reading: " keep reading"
