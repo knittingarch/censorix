@@ -1,17 +1,9 @@
 require "rails_helper"
 
-RSpec.describe "Visitor views posts", type: :system do
-  context "by clicking on 'see full post' link on home" do
-    it "shows the full post" do
-      category = create(:category)
-      article = create(:article)
-      tag = create(:tag)
-
-      post = create(:post,
-        categories: [category],
-        article: article,
-        tags: [tag],
-        featured: true)
+RSpec.describe "Visitor views full posts", type: :system do
+  context "by clicking on 'see full post' link on home page" do
+    it "shows the full featured post" do
+      post = create(:post_with_categories_and_tags, featured: true)
 
       visit root_path
 
@@ -19,6 +11,7 @@ RSpec.describe "Visitor views posts", type: :system do
 
       expect(page).to have_content post.title
       expect(page).to have_content post.published_at
+      expect(page).to have_content I18n.t("posts.featured.label")
       expect(page).to have_content post.tags.first.name
       expect(page).to have_content post.article.content
     end
