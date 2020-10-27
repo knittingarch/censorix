@@ -15,10 +15,7 @@ RSpec.describe "Visitor views blog list", type: :system do
       )
 
       expect(page).to have_content first_post.article.content
-      expect(page).to have_content first_post.tags.first.name
       expect(page).to have_content second_post.article.content
-      expect(page).to have_content second_post.tags.first.name
-      expect(page).to have_content second_post.tags.last.name
     end
   end
 end

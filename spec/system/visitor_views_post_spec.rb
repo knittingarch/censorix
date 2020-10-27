@@ -22,12 +22,8 @@ RSpec.describe "Visitor views full posts", type: :system do
       category = create(:category)
       content = "It's important to me that you're happy. Maybe we got a few little happy bushes here, just covered with snow. It's all a game of angles. Anytime you learn something your time and energy are not wasted. You can do anything your heart can imagine. Do an almighty painting with us. We tell people sometimes: we're like drug dealers, come into town and get everybody absolutely addicted to painting. It doesn't take much to get you addicted. I guess that would be considered a UFO. A big cotton ball in the sky. Automatically, all of these beautiful, beautiful things will happen."
       article = create(:article, content: content)
-      tag = create(:tag)
 
-      post = create(:post,
-        categories: [category],
-        article: article,
-        tags: [tag])
+      post = create(:post_with_categories_and_tags, article: article, categories: [category])
 
       visit category_path(category)
 
