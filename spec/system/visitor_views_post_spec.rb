@@ -42,6 +42,7 @@ RSpec.describe "Visitor views posts", type: :system do
       expect(page).to have_content post.published_at
       expect(page).to have_content(post.article.content.truncate(200, separator: " ") { link_to t("posts.truncated.keep_reading"), post_path(post) })
       expect(page).not_to have_content(post.tags.first.name)
+      expect(page).not_to have_content(post.article.content)
     end
   end
 end
