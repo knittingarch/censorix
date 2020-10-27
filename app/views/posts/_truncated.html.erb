@@ -1,0 +1,5 @@
+<div>
+  <h2><%= link_to post.title, post_path(post) %></h2>
+  <p><%= post.published_at %></p>
+  <p><%= truncate(post.article.content, length: 200) %></p>
+</div>
