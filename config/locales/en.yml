@@ -31,9 +31,6 @@
 
 en:
   categories:
-    index:
-      heading: Blog List by Category
-      page_description: Find posts by category
     show:
       page_description: "This is a list of posts for %{name}"
   home:
