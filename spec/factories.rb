@@ -1,8 +1,4 @@
 FactoryBot.define do
-  factory :article do
-    content { "This is an article for a blog post!" }
-  end
-
   factory :category do
     sequence(:name) { |n| "Category #{n}" }
   end
