@@ -14,8 +14,8 @@ RSpec.describe "Visitor views blog list", type: :system do
         name: category.name
       )
 
-      expect(page).to have_content first_post.article.content
-      expect(page).to have_content second_post.article.content
+      expect(page).to have_content first_post.content
+      expect(page).to have_content second_post.content
     end
   end
 end
