@@ -1,15 +1,10 @@
 FactoryBot.define do
-  factory :article do
-    content { "This is an article for a blog post!" }
-  end
-
   factory :category do
     sequence(:name) { |n| "Category #{n}" }
   end
 
   factory :post do
-    article
-
+    content { "This is an article for a blog post!" }
     image_url { "www.someimage.com" }
     published_at { 1.month.from_now }
     sequence(:title) { |n| "Blog Content ##{n}" }

@@ -4,7 +4,7 @@
 <% end %>
 <p><%= post.published_at %></p>
 <p><%= post.tags.map(&:name).join(", ") %></p>
-<p><%= post.article.content %></p>
+<p><%= post.content %></p>
 
 <% post.categories.each do |category| %>
   <%= link_to t(".back_to_category", category_name: category.name), category_path(category.id) %>

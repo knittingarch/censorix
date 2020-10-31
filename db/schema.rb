@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_22_113405) do
+ActiveRecord::Schema.define(version: 2020_10_28_115500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "articles", force: :cascade do |t|
-    t.bigint "post_id"
-    t.text "content", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_id"], name: "index_articles_on_post_id"
-  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
@@ -42,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_113405) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "featured", default: false
+    t.text "content", default: "", null: false
   end
 
   create_table "posts_tags", id: false, force: :cascade do |t|
@@ -57,4 +50,5 @@ ActiveRecord::Schema.define(version: 2020_10_22_113405) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_tags_on_post_id"
   end
+
 end
