@@ -1,5 +1,8 @@
 <div>
   <h2><%= link_to post.title, post_path(post) %></h2>
+  <% if post.featured? %>
+    <p><%= t("posts.featured_label") %></p>
+  <% end %>
   <p><%= post.published_at %></p>
   <p><%= truncate(post.content, length: 200, separator: ' ') { link_to t(".keep_reading"), post_path(post) }%></p>
 </div>

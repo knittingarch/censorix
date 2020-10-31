@@ -1,17 +1,16 @@
 require "rails_helper"
 
 RSpec.describe "Visitor views full posts", type: :system do
-  context "by clicking on 'see full post' link on home page" do
+  context "by clicking on CTA link on home page" do
     it "shows the full featured post" do
       post = create(:post_with_categories_and_tags, featured: true)
 
       visit root_path
-
-      click_on I18n.t("posts.featured.cta")
+      click_on I18n.t("posts.truncated.keep_reading")
 
       expect(page).to have_content post.title
       expect(page).to have_content post.published_at
-      expect(page).to have_content I18n.t("posts.featured.label")
+      expect(page).to have_content I18n.t("posts.featured_label")
       expect(page).to have_content post.tags.first.name
       expect(page).to have_content post.content
     end
