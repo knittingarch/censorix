@@ -24,7 +24,6 @@ class TagDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     name
-    post_id
     posts
   ].freeze
 
@@ -33,7 +32,6 @@ class TagDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     name
-    post_id
     posts
   ].freeze
 
@@ -42,7 +40,6 @@ class TagDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
-    post_id
     posts
   ].freeze
 
@@ -61,7 +58,7 @@ class TagDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how tags are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(tag)
-  #   "Tag ##{tag.id}"
-  # end
+  def display_resource(tag)
+    tag.name
+  end
 end

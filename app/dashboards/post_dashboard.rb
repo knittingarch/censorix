@@ -8,16 +8,31 @@ class PostDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    categories: Field::HasMany,
-    tags: Field::HasMany,
     id: Field::Number,
-    published_at: Field::DateTime,
-    image_url: Field::String,
+    categories: Field::HasMany.with_options(
+      searchable: true,
+      searchable_fields: ["name"]
+    ),
     title: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
     featured: Field::Boolean,
-    content: Field::Text
+    tags: Field::HasMany.with_options(
+      searchable: true,
+      searchable_fields: ["name"]
+    ),
+    published_at: Field::DateTime.with_options(
+      format: "%B %e, %Y @ %H:%M",
+      timezone: Time.zone
+    ),
+    content: Field::Text,
+    image_url: Field::String,
+    created_at: Field::DateTime.with_options(
+      format: "%a, %d %b %Y %H:%M:%S",
+      timezone: Time.zone
+    ),
+    updated_at: Field::DateTime.with_options(
+      format: "%a, %d %b %Y %H:%M:%S",
+      timezone: Time.zone
+    )
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -28,6 +43,8 @@ class PostDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     categories
+    title
+    featured
     tags
     published_at
   ].freeze
@@ -75,7 +92,7 @@ class PostDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how posts are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(post)
-  #   "Post ##{post.id}"
-  # end
+  def display_resource(post)
+    post.title
+  end
 end
