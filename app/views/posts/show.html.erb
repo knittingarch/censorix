@@ -1,6 +1,6 @@
 <h1><%= post.title %></h1>
 <% if post.featured? %>
-  <p><%= t("posts.featured.label") %></p>
+  <p><%= t("posts.featured_label") %></p>
 <% end %>
 <p><%= post.published_at %></p>
 <p><%= post.tags.map(&:name).join(", ") %></p>

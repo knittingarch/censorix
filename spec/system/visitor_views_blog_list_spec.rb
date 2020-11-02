@@ -14,8 +14,8 @@ RSpec.describe "Visitor views blog list", type: :system do
         name: category.name
       )
 
-      expect(page).to have_content first_post.content
-      expect(page).to have_content second_post.content
+      expect(page).to have_content first_post.content.truncate(200, separator: " ") { link_to t("posts.truncated.keep_reading"), post_path(post) }
+      expect(page).to have_content second_post.content.truncate(200, separator: " ") { link_to t("posts.truncated.keep_reading"), post_path(post) }
     end
   end
 end

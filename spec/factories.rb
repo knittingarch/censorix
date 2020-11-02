@@ -4,9 +4,9 @@ FactoryBot.define do
   end
 
   factory :post do
-    content { "This is an article for a blog post!" }
+    content { "Let your imagination be your guide. Clouds are free they come and go as they please. Isn't that fantastic? You can just push a little tree out of your brush like that. Look around, look at what we have. Beauty is everywhere, you only have to look to see it. Isn't it fantastic that you can change your mind and create all these happy things?" }
     image_url { "www.someimage.com" }
-    published_at { 1.month.from_now }
+    published_at { 1.month.ago }
     sequence(:title) { |n| "Blog Content ##{n}" }
 
     factory :post_with_categories_and_tags do
