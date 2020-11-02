@@ -9,13 +9,13 @@ class PostDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    categories: Field::HasMany.with_options(
+    categories: MultiStringSelect.with_options(
       searchable: true,
       searchable_fields: ["name"]
     ),
     title: Field::String,
     featured: Field::Boolean,
-    tags: Field::HasMany.with_options(
+    tags: MultiStringSelect.with_options(
       searchable: true,
       searchable_fields: ["name"]
     ),
