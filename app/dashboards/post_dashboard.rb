@@ -9,27 +9,15 @@ class PostDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    categories: MultiStringSelect.with_options(
+    categories: Field::HasMany.with_options(
       searchable: true,
-      searchable_fields: ["name"],
-      collection_options: {
-        kitchen: "The Kitchen",
-        critiques: "Critiques",
-        kculture: "K-Culture"
-      }
+      searchable_fields: ["name"]
     ),
     title: Field::String,
     featured: Field::Boolean,
-    tags: MultiStringSelect.with_options(
+    tags: Field::HasMany.with_options(
       searchable: true,
-      searchable_fields: ["name"],
-      collection_options: {
-        lecreuset: "Le Creuset",
-        staub: "Staub",
-        bts: "BTS",
-        politics: "Politics",
-        life: "Life"
-      }
+      searchable_fields: ["name"]
     ),
     published_at: Field::DateTime.with_options(
       format: "%B %e, %Y @ %H:%M",
