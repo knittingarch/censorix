@@ -11,13 +11,25 @@ class PostDashboard < Administrate::BaseDashboard
     id: Field::Number,
     categories: MultiStringSelect.with_options(
       searchable: true,
-      searchable_fields: ["name"]
+      searchable_fields: ["name"],
+      collection_options: {
+        kitchen: "The Kitchen",
+        critiques: "Critiques",
+        kculture: "K-Culture"
+      }
     ),
     title: Field::String,
     featured: Field::Boolean,
     tags: MultiStringSelect.with_options(
       searchable: true,
-      searchable_fields: ["name"]
+      searchable_fields: ["name"],
+      collection_options: {
+        lecreuset: "Le Creuset",
+        staub: "Staub",
+        bts: "BTS",
+        politics: "Politics",
+        life: "Life"
+      }
     ),
     published_at: Field::DateTime.with_options(
       format: "%B %e, %Y @ %H:%M",
@@ -42,8 +54,8 @@ class PostDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    categories
     title
+    categories
     featured
     tags
     published_at
@@ -53,8 +65,8 @@ class PostDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    categories
     title
+    categories
     featured
     tags
     published_at
@@ -68,8 +80,8 @@ class PostDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    categories
     title
+    categories
     featured
     tags
     published_at

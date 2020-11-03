@@ -2,13 +2,14 @@
   <%= f.label field.attribute %>
 </div>
 <div class="field-unit__field">
+  <%- html_class = field.taglike_input? ? "unrestricted" : "restricted_options" %>
+  <% debugger %>
   <%= f.select(
     field.attribute,
-    options_from_collection_for_select(
-      field.selectable_options,
-      :to_s,
-      field.data.presence,
-    ),
-    {}, multiple: true,
-  ) %>
+    nil,
+    {include_hidden: false},
+    {multiple: true, class: html_class}
+  ) do %>
+   <%= options_for_select(field.collection_options, field.selected_options) %>
+  <% end %>
 </div>
