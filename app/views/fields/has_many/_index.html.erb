@@ -11,5 +11,4 @@ as a count of how many objects are associated through the relationship.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/HasMany
 %>
 
-
-<%= field.to_s %>
+<%= field.data.map { |resource| resource.name.to_s }.join(", ") %>
