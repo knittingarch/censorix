@@ -1,4 +1,9 @@
 FactoryBot.define do
+  factory :user do
+    email { "MyString" }
+    password_digest { "MyString" }
+  end
+
   factory :category do
     sequence(:name) { |n| "Category #{n}" }
   end

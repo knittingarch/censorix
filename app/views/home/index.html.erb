@@ -9,3 +9,10 @@
   <li><%= link_to category.name, category_path(category.id) %></li>
 <% end %>
 </ul>
+
+<%= button_to "Login", '/login', method: :get %>
+<%= button_to "Sign Up", '/users/new', method: :get %>
+
+<% if logged_in? %>
+  <h3> You are logged in with <%= current_user.email %></h3>
+<% end %>
