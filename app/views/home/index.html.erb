@@ -10,5 +10,9 @@
 <% end %>
 </ul>
 
-<%= link_to "Login", "/login" %>
-<%= link_to "Create account", new_user_path %>
+<% if logged_in? %>
+  <h4>You are logged in with <%= current_user.email %></h4>
+<% else %>
+  <%= link_to "Login", "/login" %>
+  <%= link_to "Create account", new_user_path %>
+<% end %>
