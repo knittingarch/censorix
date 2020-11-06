@@ -1,4 +1,4 @@
-<h1>Create Account </h1>
+<h1><%= t("auth.create_account") %></h1>
 
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
@@ -22,5 +22,5 @@
     <%= f.password_field :password %>
   </div>
 
-  <div><%= f.submit "Submit" %></div>
+  <div><%= f.submit t("auth.create") %></div>
 <% end %>
