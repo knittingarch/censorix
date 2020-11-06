@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, notice: "Account created"
     else
+      flash.now.alert = "Email or password is invalid"
       render "new"
     end
   end

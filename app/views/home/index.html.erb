@@ -12,6 +12,7 @@
 
 <% if current_user %>
   <h4>You are logged in with <%= current_user.email %></h4>
+  <%= link_to "Logout", "/logout" %>
 <% else %>
   <%= link_to "Login", "/login" %>
   <%= link_to "Create account", new_user_path %>
