@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   resources :posts, only: [:show]
   resources :users, only: [:create, :new]
 
+  get "login", to: "sessions#new"
+  post "login", to: "sessions#create"
+
   root to: "home#index"
 end
