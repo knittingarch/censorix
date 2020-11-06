@@ -32,4 +32,9 @@ FactoryBot.define do
   factory :tag do
     sequence(:name) { |n| "tag#{n}" }
   end
+
+  factory :user do
+    sequence(:email) { |n| "test#{n}@test.com" }
+    password { "test123" }
+  end
 end
