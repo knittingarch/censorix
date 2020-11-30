@@ -1,0 +1,26 @@
+<h1><%= t("auth.create_account") %></h1>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div>
+      <h3>Form is invalid</h3>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+
+  <div><%= f.submit t("auth.create") %></div>
+<% end %>
